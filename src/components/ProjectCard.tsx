@@ -18,7 +18,13 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       whileHover={{ y: -8 }}
       className="group"
     >
-        <div className="card overflow-hidden h-full">
+      <a
+        href={project.liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block h-full"
+      >
+        <div className="card overflow-hidden h-full cursor-pointer">
         {/* Project Image */}
         <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-dark-700 dark:to-dark-600 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-primary-600/20 flex items-center justify-center">
@@ -82,19 +88,15 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           </div>
 
           {/* Project Links */}
-          <div className="flex justify-center">
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-primary-600 text-white rounded-lg font-medium text-sm group/link hover:bg-primary-700 transition-colors duration-200"
-            >
+          <div className="mt-auto flex justify-center">
+            <div className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-primary-600 text-white rounded-lg font-medium text-sm group/link">
               <span>View Project</span>
               <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-            </a>
+            </div>
           </div>
         </div>
         </div>
+      </a>
     </motion.div>
   );
 };
