@@ -35,17 +35,6 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 'enterprise-dashboard',
-    title: 'Enterprise Dashboard Solutions',
-    description: 'High-fidelity dashboards for logistics, hospitality, and liquor sales industries.',
-    longDescription: 'Delivered enterprise-grade dashboards and high-fidelity email/PDF templates tailored for various industries. Balanced brand aesthetics with system performance while adhering to modern frontend architecture standards.',
-    image: '/images/enterprise-dashboard.jpg',
-    techStack: ['React.js', 'Material UI', 'Redux', 'TypeScript', 'SCSS', 'Chart.js'],
-    githubUrl: 'https://github.com/yourusername/enterprise-dashboards',
-    liveUrl: '#',
-    featured: false,
-  },
-  {
     id: 'okas',
     title: 'Okas Property Group',
     description: 'A property group offering premium real estate solutions, specializing in modern developments and investments.',

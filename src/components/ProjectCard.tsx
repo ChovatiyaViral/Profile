@@ -17,7 +17,13 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       whileHover={{ y: -8 }}
       className="group"
     >
-      <div className="card overflow-hidden h-full">
+      <a
+        href={project.liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block h-full"
+      >
+        <div className="card overflow-hidden h-full cursor-pointer">
         {/* Project Image */}
         <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-dark-700 dark:to-dark-600 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-primary-600/20 flex items-center justify-center">
@@ -30,17 +36,12 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           </div>
           
           {/* Hover Overlay */}
-          <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <div className="flex space-x-4">
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors duration-200"
-                aria-label="View live demo"
-              >
+          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div className="text-center text-white">
+              <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-2">
                 <ExternalLink size={20} />
-              </a>
+              </div>
+              <p className="text-sm font-medium">Click to view project</p>
             </div>
           </div>
         </div>
@@ -83,18 +84,14 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
           {/* Project Links */}
           <div className="mt-auto flex justify-center">
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-primary-600 text-white hover:bg-primary-700 rounded-lg transition-colors duration-200 font-medium text-sm group/link"
-            >
-              <span>Live Demo</span>
-              <ArrowUpRight size={16} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-200" />
-            </a>
+            <div className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-primary-600 text-white rounded-lg font-medium text-sm group/link">
+              <span>View Project</span>
+              <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+            </div>
           </div>
         </div>
-      </div>
+        </div>
+      </a>
     </motion.div>
   );
 };
