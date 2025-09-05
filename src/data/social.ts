@@ -6,16 +6,6 @@ export const socialLinks: SocialLink[] = [
     url: 'https://www.linkedin.com/in/viral-chovatiya-b66a751a0',
     icon: 'Linkedin',
   },
-  {
-    name: 'Email',
-    url: 'mailto:vchovatiya992@gmail.com',
-    icon: 'Mail',
-  },
-  {
-    name: 'Phone',
-    url: 'tel:+918758921153',
-    icon: 'Phone',
-  },
 ];
 
 export const contactInfo = {
