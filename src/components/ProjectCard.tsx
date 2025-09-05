@@ -17,7 +17,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       whileHover={{ y: -8 }}
       className="group"
     >
-      <div className="card overflow-hidden h-full">
+        <div className="card overflow-hidden h-full">
         {/* Project Image */}
         <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-dark-700 dark:to-dark-600 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-primary-600/20 flex items-center justify-center">
@@ -30,17 +30,12 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           </div>
           
           {/* Hover Overlay */}
-          <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <div className="flex space-x-4">
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors duration-200"
-                aria-label="View live demo"
-              >
+          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div className="text-center text-white">
+              <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-2">
                 <ExternalLink size={20} />
-              </a>
+              </div>
+              <p className="text-sm font-medium">Click to view project</p>
             </div>
           </div>
         </div>
@@ -60,41 +55,45 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           </h3>
 
           {/* Project Description */}
-          <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow leading-relaxed">
-            {project.description}
-          </p>
+          <div className="h-24 overflow-y-auto mb-4">
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              {project.description}
+            </p>
+          </div>
 
           {/* Tech Stack */}
           <div className="mb-6">
             <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
               Technologies Used
             </h4>
-            <div className="flex flex-wrap gap-2">
-              {project.techStack.map((tech, techIndex) => (
-                <span
-                  key={techIndex}
-                  className="px-3 py-1 bg-gray-100 dark:bg-dark-700 text-gray-700 dark:text-gray-300 text-xs rounded-full font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
+            <div className="h-24 overflow-y-auto">
+              <div className="flex flex-wrap gap-2">
+                {project.techStack.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="px-3 py-1 bg-gray-100 dark:bg-dark-700 text-gray-700 dark:text-gray-300 text-xs rounded-full font-medium"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Project Links */}
-          <div className="mt-auto flex justify-center">
+          <div className="flex justify-center">
             <a
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-primary-600 text-white hover:bg-primary-700 rounded-lg transition-colors duration-200 font-medium text-sm group/link"
+              className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-primary-600 text-white rounded-lg font-medium text-sm group/link hover:bg-primary-700 transition-colors duration-200"
             >
-              <span>Live Demo</span>
-              <ArrowUpRight size={16} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-200" />
+              <span>View Project</span>
+              <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
             </a>
           </div>
         </div>
-      </div>
+        </div>
     </motion.div>
   );
 };
