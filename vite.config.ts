@@ -21,15 +21,6 @@ export default defineConfig({
   server: {
     headers: {
       'Content-Type': 'application/javascript; charset=utf-8'
-    },
-    middlewareMode: false,
-    hmr: {
-      overlay: true
-    }
-  },
-  preview: {
-    headers: {
-      'Content-Type': 'application/javascript; charset=utf-8'
-    }
+     }
   }
 })
