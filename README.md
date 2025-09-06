@@ -147,12 +147,6 @@ Users can toggle between themes using the theme toggle button in the navigation.
 2. Connect your repository to Vercel
 3. Deploy automatically on every push
 
-### Netlify
-
-1. Build the project: `npm run build`
-2. Upload the `dist` folder to Netlify
-3. Configure build settings if needed
-
 ### GitHub Pages
 
 1. Build the project: `npm run build`
