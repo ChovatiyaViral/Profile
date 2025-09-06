@@ -2,9 +2,10 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && xcopy build dist /E /I /Y",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
