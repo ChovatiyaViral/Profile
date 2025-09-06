@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, MapPin, Calendar, ArrowRight } from 'lucide-react';
 import { experience } from '../data/experience';

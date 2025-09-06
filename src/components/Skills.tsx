@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Globe, Palette, Server, Database, Wrench, Zap, ShoppingCart, Calendar, Wifi, FileCode, Box, Package } from 'lucide-react';
 import { skills } from '../data/skills';

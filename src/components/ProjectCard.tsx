@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, ArrowUpRight } from 'lucide-react';
 import type { Project } from '../types';

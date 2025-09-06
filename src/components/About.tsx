@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { User, Award, Briefcase, MapPin } from 'lucide-react';
 import { contactInfo } from '../data/social';
