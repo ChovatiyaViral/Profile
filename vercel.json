@@ -1,9 +1,9 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist",
+  "outputDirectory": "build",
   "headers": [
     {
-      "source": "/assets/(.*\\.js)",
+      "source": "/static/js/(.*\\.js)",
       "headers": [
         {
           "key": "Content-Type",
@@ -16,16 +16,7 @@
       ]
     },
     {
-      "source": "/assets/(.*\\.mjs)",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/javascript; charset=utf-8"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(.*\\.css)",
+      "source": "/static/css/(.*\\.css)",
       "headers": [
         {
           "key": "Content-Type",
