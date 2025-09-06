@@ -3,12 +3,10 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
-import { useImageModal } from '../contexts/ImageModalContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isDark, toggleTheme } = useTheme();
-  const { openModal } = useImageModal();
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -37,10 +35,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center space-x-2"
           >
-            <div 
-              className="w-8 h-8 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-200"
-              onClick={() => openModal('/images/profestional_img.jpg', 'Viral Chovatiya - Professional Photo')}
-            >
+            <div className="w-8 h-8 rounded-lg overflow-hidden">
               <img 
                 src="/images/profestional_img.jpg" 
                 alt="Viral Chovatiya"

@@ -2,11 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, Mail, Phone } from 'lucide-react';
 import { socialLinks } from '../data/social';
-import { useImageModal } from '../contexts/ImageModalContext';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const { openModal } = useImageModal();
 
   const quickLinks = [
     { name: 'Home', href: '#home' },
@@ -37,10 +35,7 @@ const Footer = () => {
             className="md:col-span-2"
           >
             <div className="flex items-center space-x-3 mb-4">
-              <div 
-                className="w-10 h-10 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-200"
-                onClick={() => openModal('/images/profestional_img.jpg', 'Viral Chovatiya - Professional Photo')}
-              >
+              <div className="w-10 h-10 rounded-lg overflow-hidden">
                 <img 
                   src="/images/profestional_img.jpg" 
                   alt="Viral Chovatiya"

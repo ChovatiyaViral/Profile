@@ -2,10 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { User, Award, Briefcase, MapPin } from 'lucide-react';
 import { contactInfo } from '../data/social';
-import { useImageModal } from '../contexts/ImageModalContext';
 
 const About = () => {
-  const { openModal } = useImageModal();
   
   const stats = [
     {
@@ -158,10 +156,7 @@ const About = () => {
 
             {/* Professional Photo */}
             <div className="text-center">
-              <div 
-                className="w-64 h-64 mx-auto rounded-full overflow-hidden border-4 border-primary-200 dark:border-primary-800 shadow-lg cursor-pointer hover:scale-105 transition-transform duration-200"
-                onClick={() => openModal('/images/profestional_img.jpg', 'Viral Chovatiya - Professional Photo')}
-              >
+              <div className="w-64 h-64 mx-auto rounded-full overflow-hidden border-4 border-primary-200 dark:border-primary-800 shadow-lg">
                 <img 
                   src="/images/profestional_img.jpg" 
                   alt="Viral Chovatiya - Professional Photo"

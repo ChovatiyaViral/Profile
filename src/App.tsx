@@ -1,4 +1,3 @@
-import React from 'react';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -8,12 +7,8 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ImageModal from './components/ImageModal';
-import { ImageModalProvider, useImageModal } from './contexts/ImageModalContext';
 
-const AppContent = () => {
-  const { isOpen, imageSrc, alt, closeModal } = useImageModal();
-
+function App() {
   useEffect(() => {
     // Add smooth scrolling behavior
     const handleSmoothScroll = (e: Event) => {
@@ -46,21 +41,7 @@ const AppContent = () => {
         <Contact />
       </main>
       <Footer />
-      <ImageModal 
-        isOpen={isOpen} 
-        onClose={closeModal} 
-        imageSrc={imageSrc} 
-        alt={alt} 
-      />
     </div>
-  );
-};
-
-function App() {
-  return (
-    <ImageModalProvider>
-      <AppContent />
-    </ImageModalProvider>
   );
 }
 
