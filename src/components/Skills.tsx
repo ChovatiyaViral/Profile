@@ -4,7 +4,7 @@ import { skills } from '../data/skills';
 
 const Skills = () => {
   // Icon mapping for skills
-  const iconMap: { [key: string]: React.ComponentType<{ size?: number; className?: string }> } = {
+  const iconMap: { [key: string]: React.ComponentType<any> } = {
     Code,
     Globe,
     Palette,
