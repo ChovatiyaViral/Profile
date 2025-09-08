@@ -62,16 +62,6 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 'okas',
-    title: 'Okas Property Group',
-    description: 'A property group offering premium real estate solutions, specializing in modern developments and investments.',
-    longDescription: 'Developed a comprehensive property management platform showcasing premium real estate solutions and modern developments. Built with responsive design principles and optimized for property showcase and investment opportunities.',
-    techStack: ['JavaScript', 'Next.js', 'Redux', 'React Hook Validations', 'HTML', 'CSS', 'Scss'],
-    githubUrl: '#',
-    liveUrl: 'https://okaspropertygroup.com.au/',
-    featured: false,
-  },
-  {
     id: 'the-rarest-duncan-taylor-whisky',
     title: 'The Rarest Duncan Taylor Whisky',
     description: 'A premium whisky showcase platform featuring "The Rarest Collection" - the pinnacle of Duncan Taylor\'s exceptional whisky offerings. Built an immersive experience highlighting rare whiskies including the prestigious Port Ellen 40-Year-Old from one of the last batches before the distillery closed in 1983, unique Kinclaith and Caperdonich bottlings, and other legacy casks. Showcases one of the world\'s largest privately held Scotch Whisky collections with sophisticated presentation and luxury brand positioning.',
@@ -89,6 +79,16 @@ export const projects: Project[] = [
     techStack: ['JavaScript', 'TypeScript', 'Next.js', 'React.js', 'Interactive Gallery', 'Axios', 'HTML', 'CSS', 'SCSS', 'Bootstrap', 'Responsive Design', 'Premium Brand UI/UX', 'Whisky Collection Showcase', 'Product Portfolio Management', 'E-commerce Integration'],
     githubUrl: '#',
     liveUrl: 'https://www.duncantaylor.com/',
+    featured: false,
+  },
+  {
+    id: 'okas',
+    title: 'Okas Property Group',
+    description: 'A property group offering premium real estate solutions, specializing in modern developments and investments.',
+    longDescription: 'Developed a comprehensive property management platform showcasing premium real estate solutions and modern developments. Built with responsive design principles and optimized for property showcase and investment opportunities.',
+    techStack: ['JavaScript', 'Next.js', 'Redux', 'React Hook Validations', 'HTML', 'CSS', 'Scss'],
+    githubUrl: '#',
+    liveUrl: 'https://okaspropertygroup.com.au/',
     featured: false,
   },
 ];
