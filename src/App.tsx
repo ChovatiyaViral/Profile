@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
-    // Add smooth scrolling behavior
+    // Add smooth scrolling behavior for anchor links
     const handleSmoothScroll = (e: Event) => {
       const target = e.target as HTMLElement;
       if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
@@ -19,7 +19,15 @@ function App() {
         if (href) {
           const element = document.querySelector(href);
           if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            // Get the navbar height to offset the scroll position
+            const navbarHeight = 64; // h-16 = 64px
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - navbarHeight;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
           }
         }
       }

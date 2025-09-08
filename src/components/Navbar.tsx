@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const { isDark, toggleTheme } = useTheme();
 
   const navItems = [
@@ -16,12 +17,57 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  // Function to detect active section on scroll
+  const handleScroll = () => {
+    const sections = navItems.map(item => item.href.substring(1)); // Remove # from href
+    const navbarHeight = 64;
+    
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const section = document.getElementById(sections[i]);
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= navbarHeight + 100) { // 100px threshold
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
     }
+  };
+
+  // Add scroll event listener
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    // Set initial active section
+    handleScroll();
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToSection = (href: string) => {
+    // Close mobile menu first
     setIsMenuOpen(false);
+    
+    // Update active section immediately
+    const sectionId = href.substring(1); // Remove # from href
+    setActiveSection(sectionId);
+    
+    // Small delay to allow menu animation to complete
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        // Get the navbar height to offset the scroll position
+        const navbarHeight = 64; // h-16 = 64px
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - navbarHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
   };
 
   return (
@@ -48,15 +94,24 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 font-medium"
-              >
-                {item.name}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const sectionId = item.href.substring(1); // Remove # from href
+              const isActive = activeSection === sectionId;
+              
+              return (
+                <button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.href)}
+                  className={`transition-colors duration-200 font-medium ${
+                    isActive
+                      ? 'text-primary-600 dark:text-primary-400'
+                      : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
+                  }`}
+                >
+                  {item.name}
+                </button>
+              );
+            })}
           </div>
 
           {/* Theme Toggle & Mobile Menu Button */}
@@ -89,16 +144,25 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white dark:bg-dark-900 border-t border-gray-200 dark:border-dark-700"
           >
-            <div className="px-4 py-4 space-y-2">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-800 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg transition-colors duration-200 font-medium"
-                >
-                  {item.name}
-                </button>
-              ))}
+            <div className="px-4 py-4 space-y-1">
+              {navItems.map((item) => {
+                const sectionId = item.href.substring(1); // Remove # from href
+                const isActive = activeSection === sectionId;
+                
+                return (
+                  <button
+                    key={item.name}
+                    onClick={() => scrollToSection(item.href)}
+                    className={`block w-full text-left px-4 py-3 rounded-lg transition-colors duration-200 font-medium text-base ${
+                      isActive
+                        ? 'bg-primary-100 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400'
+                        : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-800 hover:text-primary-600 dark:hover:text-primary-400'
+                    }`}
+                  >
+                    {item.name}
+                  </button>
+                );
+              })}
             </div>
           </motion.div>
         )}
