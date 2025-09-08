@@ -2,16 +2,6 @@ import type { Project } from '../types';
 
 export const projects: Project[] = [
   {
-    id: 'meeko-world',
-    title: 'Meeko World - E-Learning Platform',
-    description: 'Led the frontend development of a role-based e-learning platform using React.js, TypeScript, Redux Toolkit, and Bootstrap. Engineered dynamic dashboards for kids, parents, and educators, delivering personalized learning journeys, progress tracking, and role-specific content access. Focused on developing a scalable, maintainable, and intuitive UI architecture for long-term platform growth. Integrated an interactive whiteboard and implemented complex validated forms using jQuery and Redux, supporting real-time collaboration and assessments. Took a lead role in SCSS styling to ensure responsive design across all user interfaces, maintaining consistency, accessibility, and user inclusivity for a diverse demographic.',
-    longDescription: 'Led the frontend development of a role-based e-learning platform using React.js, TypeScript, Redux Toolkit, and Bootstrap. Engineered dynamic dashboards for kids, parents, and educators, delivering personalized learning journeys, progress tracking, and role-specific content access. Focused on developing a scalable, maintainable, and intuitive UI architecture for long-term platform growth. Integrated an interactive whiteboard and implemented complex validated forms using jQuery and Redux, supporting real-time collaboration and assessments. Took a lead role in SCSS styling to ensure responsive design across all user interfaces, maintaining consistency, accessibility, and user inclusivity for a diverse demographic.',
-    techStack: ['JavaScript', 'jQuery', 'TypeScript', 'React.js', 'Node.js', 'Redux Thunk', 'Formik', 'Axios', 'Rest Api Integration', 'Three.js', 'MongoDB', 'Socket.io', 'HTML', 'CSS', 'SCSS', 'Bootstrap'],
-    githubUrl: '#',
-    liveUrl: 'https://www.meeko.world/',
-    featured: true,
-  },
-  {
     id: 'duncan-taylor',
     title: 'Duncan Taylor Portal',
     description: 'Spearheaded the development of robust User and Store Management Modules using React.js, Ant Design, and Lodash. Integrated advanced features including custom Ant Design Table components, order creation functionality, and smart suggestion tooltips, significantly streamlining user interactions and elevating operational efficiency. The modules empowered administrators with seamless control over user roles, order tracking, and real-time data visualization to optimize workflow management. Designed and delivered a fully responsive, high-performance dashboard UI tailored to the needs of sales and transport teams, ensuring consistent user experience across all device types. Produced high-quality HTML templates for order confirmation emails and print-ready PDF documents, integrating brand-aligned layouts to support daily logistics and improve communication with clients and vendors.',
@@ -28,7 +18,17 @@ export const projects: Project[] = [
     longDescription: 'Built a visually immersive, fully responsive whiskey brand website using Next.js and Tailwind CSS, consisting of three custom designed pages that effectively convey the brand\'s identity, product storytelling, and detailed bottle information. Emphasized high performance, responsive design, and a luxury visual experience aligned with the premium positioning of the brand. Integrated Shopify API to implement seamless e-commerce functionality, enabling users to browse products, view dynamic pricing, and complete purchases directly on the platform. Ensured real-time data synchronization and a streamlined checkout flow, meeting modern UX standards tailored for luxury e-commerce.',
     techStack: ['JavaScript', 'TypeScript', 'Next.js', 'BuyFunctionality', 'HTML', 'CSS', 'SCSS', 'Animation'],
     githubUrl: 'https://github.com/yourusername/macallan-whisky',
-    liveUrl: 'https://macallan-whisky.com',
+    liveUrl: 'https://rarewhiskies.thespiritsembassy.com/',
+    featured: true,
+  },
+  {
+    id: 'meeko-world',
+    title: 'Meeko World - E-Learning Platform',
+    description: 'Led the frontend development of a role-based e-learning platform using React.js, TypeScript, Redux Toolkit, and Bootstrap. Engineered dynamic dashboards for kids, parents, and educators, delivering personalized learning journeys, progress tracking, and role-specific content access. Focused on developing a scalable, maintainable, and intuitive UI architecture for long-term platform growth. Integrated an interactive whiteboard and implemented complex validated forms using jQuery and Redux, supporting real-time collaboration and assessments. Took a lead role in SCSS styling to ensure responsive design across all user interfaces, maintaining consistency, accessibility, and user inclusivity for a diverse demographic.',
+    longDescription: 'Led the frontend development of a role-based e-learning platform using React.js, TypeScript, Redux Toolkit, and Bootstrap. Engineered dynamic dashboards for kids, parents, and educators, delivering personalized learning journeys, progress tracking, and role-specific content access. Focused on developing a scalable, maintainable, and intuitive UI architecture for long-term platform growth. Integrated an interactive whiteboard and implemented complex validated forms using jQuery and Redux, supporting real-time collaboration and assessments. Took a lead role in SCSS styling to ensure responsive design across all user interfaces, maintaining consistency, accessibility, and user inclusivity for a diverse demographic.',
+    techStack: ['JavaScript', 'jQuery', 'TypeScript', 'React.js', 'Node.js', 'Redux Thunk', 'Formik', 'Axios', 'Rest Api Integration', 'Three.js', 'MongoDB', 'Socket.io', 'HTML', 'CSS', 'SCSS', 'Bootstrap'],
+    githubUrl: '#',
+    liveUrl: 'https://www.meeko.world/',
     featured: true,
   },
   {
