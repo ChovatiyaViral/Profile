@@ -14,10 +14,9 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       viewport={{ once: true }}
-      whileHover={{ y: -8 }}
       className="group"
     >
-        <div className="card overflow-hidden h-full">
+        <div className="card overflow-hidden h-full lg:hover:-translate-y-2 transition-transform duration-300">
         {/* Project Image */}
         <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-dark-700 dark:to-dark-600 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-primary-600/20 flex items-center justify-center">
@@ -29,8 +28,8 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             </div>
           </div>
           
-          {/* Hover Overlay */}
-          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          {/* Hover Overlay - Hidden on mobile and tablet */}
+          <div className="hidden lg:flex absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center">
             <div className="text-center text-white">
               <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-2">
                 <ExternalLink size={20} />
