@@ -5,7 +5,7 @@ export const experience: Experience[] = [
     id: 'sovereign-solutions',
     company: 'Sovereign Solutions India Private Limited',
     position: 'Software Engineer',
-    duration: 'Dec 2021 - Present',
+    duration: 'Dec 2021 - Nov 2025',
     location: 'Bengaluru',
     description: 'Leading frontend development for scalable web applications across diverse industries, focusing on performance optimization and user experience.',
     technologies: ['JavaScript', 'TypeScript', 'React.js', 'Next.js', 'Redux Thunk', 'Redux Toolkit', 'Context Api', 'HTML', 'CSS', 'SCSS', 'Bootstrap', 'Ant Design', 'Animations', 'Lodash'],
