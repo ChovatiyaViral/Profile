@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon, Download } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 
 const Navbar = () => {
@@ -116,6 +116,15 @@ const Navbar = () => {
 
           {/* Theme Toggle & Mobile Menu Button */}
           <div className="flex items-center space-x-4">
+            <a
+              href="/resume.pdf"
+              download="Viral_Chovatiya_resume.pdf"
+              className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-600 hover:bg-primary-700 text-white font-medium text-sm transition-colors duration-200 shadow-sm"
+            >
+              <Download size={16} />
+              Resume
+            </a>
+
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-dark-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-700 transition-colors duration-200"
@@ -163,6 +172,18 @@ const Navbar = () => {
                   </button>
                 );
               })}
+              
+              <div className="pt-2 pb-1 px-4">
+                <a
+                  href="/resume.pdf"
+                  download="Viral_Chovatiya_resume.pdf"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-lg bg-primary-600 hover:bg-primary-700 text-white font-medium text-base transition-colors duration-200 shadow-sm"
+                >
+                  <Download size={18} />
+                  Download Resume
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

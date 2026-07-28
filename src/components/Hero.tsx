@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Mail } from 'lucide-react';
+import { ArrowRight, Mail, Download } from 'lucide-react';
 import { socialLinks } from '../data/social';
 
 const Hero = () => {
@@ -36,7 +36,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6"
           >
-            {/* Viral Chovatiya */}
+            Viral Chovatiya
           </motion.h1>
 
           {/* Role */}
@@ -74,6 +74,14 @@ const Hero = () => {
               View Projects
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
             </button>
+            <a
+              href="/resume.pdf"
+              download="Viral_Chovatiya_resume.pdf"
+              className="btn-secondary group"
+            >
+              <Download size={20} className="group-hover:translate-y-0.5 transition-transform duration-200" />
+              Download Resume
+            </a>
             <button
               onClick={() => scrollToSection('#contact')}
               className="btn-secondary group"

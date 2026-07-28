@@ -36,6 +36,10 @@
     -ms-user-select: text;
     user-select: text;
   }
+
+  button, a, [role="button"] {
+    cursor: pointer;
+  }
 }
 
 @layer components {

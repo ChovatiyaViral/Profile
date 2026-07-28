@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { User, Award, Briefcase, MapPin } from 'lucide-react';
+import { User, Award, Briefcase, MapPin, Download } from 'lucide-react';
 import { contactInfo } from '../data/social';
 
 const About = () => {
@@ -107,15 +107,27 @@ const About = () => {
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                   Get In Touch
                 </h4>
-                <div className="space-y-2 text-gray-600 dark:text-gray-300">
-                  <p className="flex items-center space-x-2">
-                    <MapPin size={16} className="text-primary-500" />
-                    <span>{contactInfo.location}</span>
-                  </p>
-                  <p className="flex items-center space-x-2">
-                    <Briefcase size={16} className="text-primary-500" />
-                    <span>Open to new opportunities</span>
-                  </p>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                  <div className="space-y-2 text-gray-600 dark:text-gray-300">
+                    <p className="flex items-center space-x-2">
+                      <MapPin size={16} className="text-primary-500" />
+                      <span>{contactInfo.location}</span>
+                    </p>
+                    <p className="flex items-center space-x-2">
+                      <Briefcase size={16} className="text-primary-500" />
+                      <span>Open to new opportunities</span>
+                    </p>
+                  </div>
+                  <div>
+                    <a
+                      href="/resume.pdf"
+                      download="Viral_Chovatiya_resume.pdf"
+                      className="btn-primary group"
+                    >
+                      <Download size={20} className="group-hover:translate-y-0.5 transition-transform duration-200" />
+                      Download Resume
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
